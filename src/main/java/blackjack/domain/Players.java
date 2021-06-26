@@ -7,7 +7,10 @@ import java.util.stream.Collectors;
 public class Players {
     private final List<Player> players;
 
-    public Players(String[] names) {
+    private static final String SEPARATOR = ",";
+
+    public Players(String nameInfo) {
+        String[] names = nameInfo.split(SEPARATOR);
         this.players = convertPlayers(names);
     }
 
