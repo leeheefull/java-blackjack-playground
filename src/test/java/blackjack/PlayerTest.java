@@ -1,5 +1,6 @@
 package blackjack;
 
+import blackjack.domain.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -27,6 +28,6 @@ public class PlayerTest {
         player.setBetAmount(20000);
 
         // when, then
-        assertThat(player.getBetAmount()).isEqualTo(20000);
+        assertThat(player.getBetAmount().getBetAmount()).isEqualTo(20000);
     }
 }
