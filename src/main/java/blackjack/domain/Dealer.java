@@ -1,18 +1,7 @@
 package blackjack.domain;
 
-public class Dealer {
-    private final Cards cards;
-
+public class Dealer extends Participant {
     public Dealer() {
-        this.cards = new Cards();
-        cards.hit(new RandomHitStrategy());
-    }
-
-    public Cards getCards() {
-        return this.cards;
-    }
-
-    public void hit() {
-        this.cards.hit(new RandomHitStrategy());
+        this.getCards().hit(new RandomHitStrategy());
     }
 }

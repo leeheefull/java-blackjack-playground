@@ -28,19 +28,19 @@ public class DenominationTest {
     @Test
     @DisplayName("데노미네이션 값이 맞는지")
     void denomination_value() {
-        assertThat(Denomination.ACE.getValue()).isEqualTo(1);
-        assertThat(Denomination.TWO.getValue()).isEqualTo(2);
-        assertThat(Denomination.THREE.getValue()).isEqualTo(3);
-        assertThat(Denomination.FOUR.getValue()).isEqualTo(4);
-        assertThat(Denomination.FIVE.getValue()).isEqualTo(5);
-        assertThat(Denomination.SIX.getValue()).isEqualTo(6);
-        assertThat(Denomination.SEVEN.getValue()).isEqualTo(7);
-        assertThat(Denomination.EIGHT.getValue()).isEqualTo(8);
-        assertThat(Denomination.NINE.getValue()).isEqualTo(9);
-        assertThat(Denomination.TEN.getValue()).isEqualTo(10);
-        assertThat(Denomination.JACK.getValue()).isEqualTo(10);
-        assertThat(Denomination.QUEEN.getValue()).isEqualTo(10);
-        assertThat(Denomination.KING.getValue()).isEqualTo(10);
+        assertThat(Denomination.ACE.getScore()).isEqualTo(1);
+        assertThat(Denomination.TWO.getScore()).isEqualTo(2);
+        assertThat(Denomination.THREE.getScore()).isEqualTo(3);
+        assertThat(Denomination.FOUR.getScore()).isEqualTo(4);
+        assertThat(Denomination.FIVE.getScore()).isEqualTo(5);
+        assertThat(Denomination.SIX.getScore()).isEqualTo(6);
+        assertThat(Denomination.SEVEN.getScore()).isEqualTo(7);
+        assertThat(Denomination.EIGHT.getScore()).isEqualTo(8);
+        assertThat(Denomination.NINE.getScore()).isEqualTo(9);
+        assertThat(Denomination.TEN.getScore()).isEqualTo(10);
+        assertThat(Denomination.JACK.getScore()).isEqualTo(10);
+        assertThat(Denomination.QUEEN.getScore()).isEqualTo(10);
+        assertThat(Denomination.KING.getScore()).isEqualTo(10);
     }
 
     @Test
