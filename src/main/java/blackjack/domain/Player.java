@@ -20,4 +20,12 @@ public class Player extends Participant {
     public BetAmount getBetAmount() {
         return this.betAmount;
     }
+
+    @Override
+    public String toString() {
+        return this.name + "\t"
+                + this.getCards().getCardScoreSum() + "\t\t"
+                + this.betAmount.getBetAmount() + "\t"
+                + this.getCards();
+    }
 }

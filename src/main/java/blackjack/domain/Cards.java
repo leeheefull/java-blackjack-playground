@@ -28,10 +28,50 @@ public class Cards {
         }
     }
 
+    public int getCardScoreSum() {
+        int score = getCardSumByAceOne();
+        if (isAce() && score + 10 <= 21) {
+            return score + 10;
+        }
+        return score;
+    }
+
+    public boolean isBlackjack() {
+        return this.cards.size() == 2 && isTwentyOne();
+    }
+
+    public boolean isTwentyOne() {
+        return this.cards.size() != 2 && getCardScoreSum() == 21;
+    }
+
+    public boolean isBurst() {
+        return 21 < getCardScoreSum();
+    }
+
+    public boolean isNotBurstAndNotBlackjack() {
+        return !isBlackjack() && !isBurst();
+    }
+
+    public boolean isNotBurstAndNotTwentyOne() {
+        return !isTwentyOne() && !isBurst();
+    }
+
     @Override
     public String toString() {
         return this.cards.stream()
                 .map(Card::toString)
                 .collect(Collectors.joining(", "));
+    }
+
+    private int getCardSumByAceOne() {
+        return this.cards.stream()
+                .map(card -> card.getDenomination().getScore())
+                .mapToInt(Integer::intValue)
+                .sum();
+    }
+
+    private boolean isAce() {
+        return this.cards.stream()
+                .anyMatch(card -> card.getDenomination().equals(Denomination.ACE));
     }
 }
