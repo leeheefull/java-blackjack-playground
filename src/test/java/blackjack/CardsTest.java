@@ -22,7 +22,7 @@ public class CardsTest {
         cards.hit(() -> new Card(Denomination.ACE, Suit.CLUB));
 
         // when, then
-        assertThat(cards.getCards().get(0).getDenomination()).isEqualTo(Denomination.ACE);
-        assertThat(cards.getCards().get(0).getSuit()).isEqualTo(Suit.CLUB);
+        assertThat(cards.getCardList().get(0).getDenomination()).isEqualTo(Denomination.ACE);
+        assertThat(cards.getCardList().get(0).getSuit()).isEqualTo(Suit.CLUB);
     }
 }

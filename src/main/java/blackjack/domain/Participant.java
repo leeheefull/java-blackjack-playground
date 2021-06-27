@@ -11,8 +11,8 @@ public class Participant {
         return this.cards;
     }
 
-    public void hit() {
-        this.cards.hit(new RandomHitStrategy());
+    public void addCard(Card card) {
+        this.cards.getCards().add(card);
     }
 
     public int getCardScoreSum() {

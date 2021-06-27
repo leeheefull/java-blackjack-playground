@@ -19,7 +19,7 @@ public class ParticipantTest {
     @DisplayName("hit 잘 되는지")
     void hit() {
         // given
-        participant.hit();
+        participant.addCard(new Card(Denomination.ACE, Suit.CLUB));
 
         // when, then
         assertThat(participant.getCards().getCards().size()).isEqualTo(1);

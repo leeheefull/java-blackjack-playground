@@ -13,7 +13,11 @@ public class Cards {
         this.cards = new HashSet<>();
     }
 
-    public List<Card> getCards() {
+    public Set<Card> getCards() {
+        return this.cards;
+    }
+
+    public List<Card> getCardList() {
         return new ArrayList<>(this.cards);
     }
 

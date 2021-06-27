@@ -1,6 +1,9 @@
 package blackjack;
 
+import blackjack.domain.Card;
+import blackjack.domain.Denomination;
 import blackjack.domain.Player;
+import blackjack.domain.Suit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -32,18 +35,12 @@ public class PlayerTest {
     }
 
     @Test
-    @DisplayName("게임 시작 시 2장 받기")
-    void two_card_receive() {
-        assertThat(player.getCards().getCards().size()).isEqualTo(2);
-    }
-
-    @Test
-    @DisplayName("Hit 잘 되는지")
-    void hit() {
+    @DisplayName("카드 추가")
+    void add_card() {
         // given
-        player.hit();
+        player.addCard(new Card(Denomination.ACE, Suit.CLUB));
 
         // when, then
-        assertThat(player.getCards().getCards().size()).isEqualTo(3);
+        assertThat(player.getCards().getCards().size()).isEqualTo(1);
     }
 }

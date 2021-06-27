@@ -7,9 +7,6 @@ public class Player extends Participant {
     public Player(String name) {
         this.name = name;
         this.betAmount = new BetAmount(0);
-
-        this.getCards().hit(new RandomHitStrategy());
-        this.getCards().hit(new RandomHitStrategy());
     }
 
     public void setBetAmount(int betAmount) {
