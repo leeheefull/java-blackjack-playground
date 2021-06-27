@@ -35,7 +35,7 @@ public enum Denomination {
 
     public static Denomination getInstance(String inputName) {
         return Arrays.stream(values())
-                .filter(denomination -> denomination.name == inputName)
+                .filter(denomination -> denomination.name.equals(inputName))
                 .findFirst()
                 .get();
     }

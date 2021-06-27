@@ -30,4 +30,20 @@ public class PlayerTest {
         // when, then
         assertThat(player.getBetAmount().getBetAmount()).isEqualTo(20000);
     }
+
+    @Test
+    @DisplayName("게임 시작 시 2장 받기")
+    void two_card_receive() {
+        assertThat(player.getCards().getCards().size()).isEqualTo(2);
+    }
+
+    @Test
+    @DisplayName("Hit 잘 되는지")
+    void hit() {
+        // given
+        player.hit();
+
+        // when, then
+        assertThat(player.getCards().getCards().size()).isEqualTo(3);
+    }
 }
