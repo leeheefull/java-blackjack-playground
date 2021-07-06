@@ -1,5 +1,6 @@
 package blackjack.domain;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -7,20 +8,15 @@ import java.util.stream.Collectors;
 public class Players {
     private final List<Player> players;
 
-    private static final String SEPARATOR = ",";
-
-    public Players(String nameInfo) {
-        String[] names = nameInfo.split(SEPARATOR);
-        this.players = convertPlayers(names);
+    public Players() {
+        this.players = new ArrayList<>();
     }
 
     public List<Player> getPlayers() {
         return this.players;
     }
 
-    private List<Player> convertPlayers(String[] names) {
-        return Arrays.stream(names)
-                .map(Player::new)
-                .collect(Collectors.toList());
+    public void addPlayer(Player player) {
+        this.players.add(player);
     }
 }

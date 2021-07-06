@@ -16,12 +16,22 @@ public class ParticipantTest {
     }
 
     @Test
-    @DisplayName("카드 받기")
+    @DisplayName("카드 추가")
     void add_card() {
         // given
-        participant.addCard(new Card(Denomination.ACE, Suit.CLUB));
+        this.participant.addDeck(new Card(Denomination.ACE, Suit.CLUB));
 
         // when, then
-        assertThat(participant.getCards().getCards().size()).isEqualTo(1);
+        assertThat(this.participant.getDeck().getDeck().size()).isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("수익금이 잘 입력 되는지")
+    void save_revenue() {
+        // given
+        this.participant.setRevenue(10000);
+
+        // when, then
+        assertThat(this.participant.getRevenue()).isEqualTo(10000);
     }
 }

@@ -2,14 +2,10 @@ package blackjack.domain;
 
 public class Player extends Participant {
     private final String name;
-    private BetAmount betAmount;
+    private final BetAmount betAmount;
 
-    public Player(String name) {
+    public Player(String name, int betAmount) {
         this.name = name;
-        this.betAmount = new BetAmount(0);
-    }
-
-    public void setBetAmount(int betAmount) {
         this.betAmount = new BetAmount(betAmount);
     }
 
@@ -24,8 +20,8 @@ public class Player extends Participant {
     @Override
     public String toString() {
         return this.name + "\t"
-                + this.getCards().getCardScoreSum() + "\t\t"
+                + this.getDeck().getCardScoreSum() + "\t\t"
                 + this.betAmount.getBetAmount() + "\t"
-                + this.getCards();
+                + this.getDeck();
     }
 }

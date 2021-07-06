@@ -1,16 +1,15 @@
 package blackjack.domain;
 
 public class Participant {
-    private final Cards cards;
+    private final Deck deck;
     private int revenue;
 
     public Participant() {
-        this.cards = new Cards();
-        this.revenue = 0;
+        this.deck = new Deck();
     }
 
-    public Cards getCards() {
-        return this.cards;
+    public Deck getDeck() {
+        return this.deck;
     }
 
     public int getRevenue() {
@@ -21,7 +20,7 @@ public class Participant {
         this.revenue = revenue;
     }
 
-    public void addCard(Card card) {
-        this.cards.getCards().add(card);
+    public void addDeck(Card card) {
+        this.deck.hit(card);
     }
 }

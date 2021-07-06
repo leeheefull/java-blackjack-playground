@@ -1,9 +1,6 @@
 package blackjack;
 
-import blackjack.domain.Card;
-import blackjack.domain.Denomination;
 import blackjack.domain.Player;
-import blackjack.domain.Suit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,7 +12,7 @@ public class PlayerTest {
 
     @BeforeEach
     void setUp() {
-        this.player = new Player("chan");
+        this.player = new Player("chan", 10000);
     }
 
     @Test
@@ -27,20 +24,6 @@ public class PlayerTest {
     @Test
     @DisplayName("베팅 금액이 잘 저장 되는지")
     void save_bet_amount() {
-        // given
-        player.setBetAmount(20000);
-
-        // when, then
-        assertThat(player.getBetAmount().getBetAmount()).isEqualTo(20000);
-    }
-
-    @Test
-    @DisplayName("카드 추가")
-    void add_card() {
-        // given
-        player.addCard(new Card(Denomination.ACE, Suit.CLUB));
-
-        // when, then
-        assertThat(player.getCards().getCards().size()).isEqualTo(1);
+        assertThat(player.getBetAmount().getBetAmount()).isEqualTo(10000);
     }
 }
